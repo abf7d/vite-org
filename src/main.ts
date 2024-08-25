@@ -1,24 +1,11 @@
-import './style.scss'
-import typescriptLogo from './typescript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.ts'
-
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
-    <h1>Vite + TypeScript</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more
-    </p>
-  </div>
-`
-
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+// <link rel="stylesheet" href="assets/css/style-project-management.css?v1.0.0">    
+// <link rel="stylesheet" href="assets/css/style-critical-pass.css?v1.0.0">
+// <!-- <link rel="stylesheet" href="assets/css/brands.css"> -->
+// <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+// <script src="assets/js/bundle.js?v1.0.0"></script>
+// <script src="assets/js/scripts.js?v1.0.0"></script>
+import './assets/styles/style-project-management.scss';
+import './assets/styles/style-critical-pass.scss';
+// import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css';
+import './assets/scripts/bundle.js';
+import './assets/scripts/scripts.js';
