@@ -849,6 +849,7 @@ NioApp.Custom.submitForm = function (selector) {
       preloaderElement.classList.add('hide');
     }
 
+    document.querySelector('.unstyled-content-fix').style.visibility = 'visible';
   };
 
 
@@ -926,7 +927,7 @@ NioApp.Custom.submitForm = function (selector) {
     NioApp.winLoad(NioApp.Custom.init);
   }
 
-  NioApp.init();
+  // NioApp.init();
 //   return NioApp;
 // })(NioApp);
 
