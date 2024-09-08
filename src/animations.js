@@ -334,7 +334,7 @@ async function init() {
   const scene = new THREE.Scene();
   scene.background = new THREE.Color(0xffffff)
   const camera = new THREE.PerspectiveCamera(45, /*window.innerWidth / window.innerHeight **/ .68, 1, 10000);
-  camera.position.set(200, 10, 150);
+  camera.position.set(210, 10, 140);
   //camera.lookAt(0, 0, 0); 
   camera.lookAt(0, 0, -70); // moved the polygons up on the screen
   camera.rotation.z = THREE.MathUtils.degToRad(45);
@@ -364,20 +364,21 @@ async function init() {
 
   const animationManager = new AnimationManager();
   const polygonGroup0 = new PolygonGroup(scene, gridSize, gridSpacing, initialZPosition, 0, material, edgesMaterial);
-  polygonGroup0.animatePointsExpandCollapse(true, 0);
-  polygonGroup0.pause(10);
-  polygonGroup0.animatePointColorChange('#999', .25)
-  polygonGroup0.pause(1.2);
-  polygonGroup0.animatePointColorChange('#1c1', .25)
-  polygonGroup0.pause(.3);
+  polygonGroup0.animatePointsExpandCollapse(true, 0.25);
+  polygonGroup0.pause(5.75);
+  // polygonGroup0.animatePointColorChange('#999', .25)
+  // polygonGroup0.pause(1.2);
+  // polygonGroup0.animatePointColorChange('#1c1', .25)
+  polygonGroup0.animatePointsExpandCollapse(false, 0.25);
+  polygonGroup0.pause(.5);
 
   animationManager.addPolygon(polygonGroup0);
   const polygonGroup1 = new PolygonGroup(scene, gridSize, gridSpacing, initialZPosition, 1, material, edgesMaterial);
   polygonGroup1.fadePoints(0, .8)
   polygonGroup1.moveToZ(-70, 0.25);
   polygonGroup1.animatePointsExpandCollapse(true, 0.25);
-  polygonGroup1.pause(7);
-  polygonGroup1.animatePointColorChange('#1c1', .25)
+  polygonGroup1.pause(3.5);
+  // polygonGroup1.animatePointColorChange('#1c1', .25)
   polygonGroup1.pause(.9);
   polygonGroup1.animatePointsExpandCollapse(false, 0.25);
   polygonGroup1.pause(0.15);
@@ -390,29 +391,35 @@ async function init() {
   const polygonGroup2 = new PolygonGroup(scene, gridSize, gridSpacing, 0, 2, material, edgesMaterial);
   polygonGroup2.pause(.5);
   polygonGroup2.fadePoints(0, .8)
-  polygonGroup2.moveToZ(-140, 0.25, -70);
+  polygonGroup2.moveToZ(-170, 0.25, -70);
   polygonGroup2.animatePointsExpandCollapse(true, 0.25);
-  polygonGroup2.pause(1);
+
+  // polygonGroup2.pause(1);
+  // polygonGroup2.animatePointsExpandCollapse(false, 0.25);
+  // polygonGroup2.moveToY(-140, 0.5, 0);
+  // polygonGroup2.animatePointColorChange('#ffd800', 0)
+  // polygonGroup2.moveToY(0, 0.5, 140);
+  // polygonGroup2.pause(.1);
+  // polygonGroup2.moveToY(-140, 0.5, 0);
+  // polygonGroup2.animatePointColorChange('#1c1', 0)
+  // polygonGroup2.moveToY(0, 0.5, 140);
+  // polygonGroup2.animatePointsExpandCollapse(true, 0.25);
+  // polygonGroup2.pause(1.25);
+
+  polygonGroup2.pause(3.25);
+
   polygonGroup2.animatePointsExpandCollapse(false, 0.25);
-  polygonGroup2.moveToY(-140, 0.5, 0);
-  polygonGroup2.animatePointColorChange('#ffd800', 0)
-  polygonGroup2.moveToY(0, 0.5, 140);
-  polygonGroup2.pause(.1);
-  polygonGroup2.moveToY(-140, 0.5, 0);
-  polygonGroup2.animatePointColorChange('#1c1', 0)
-  polygonGroup2.moveToY(0, 0.5, 140);
-  polygonGroup2.animatePointsExpandCollapse(true, 0.25);
-  polygonGroup2.pause(1.25);
-  polygonGroup2.animatePointsExpandCollapse(false, 0.25);
-  polygonGroup2.pause(0.25);
-  polygonGroup2.moveToZ(-70, 0.25, -140);
-  polygonGroup2.pause(1.42);
+  // polygonGroup2.pause(0.25);
+
+
+  polygonGroup2.moveToZ(-70, 0.25, -170);
+  // polygonGroup2.pause(1.42);
   polygonGroup2.animatePointColorChange('#f00', 0)
   polygonGroup2.fadePoints(0.5, 10)
   animationManager.addPolygon(polygonGroup2);
 
   const renderer = new THREE.WebGLRenderer();
-  renderer.setSize(565,700);//window.innerWidth, window.innerHeight);
+  renderer.setSize(665,700);//window.innerWidth, window.innerHeight);
   container.appendChild(renderer.domElement);
 
   window.addEventListener('resize', () => onWindowResize(camera, renderer));
